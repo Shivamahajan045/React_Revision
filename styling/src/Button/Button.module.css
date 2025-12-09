@@ -1,0 +1,13 @@
+.button{
+    background-color: yellow;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
