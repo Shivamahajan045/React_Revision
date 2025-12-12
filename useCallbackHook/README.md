@@ -1,16 +1,89 @@
-# React + Vite
+useCallback is a React hook that memoizes a function, so the same function reference is returned across re-renders unless dependencies change.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Syntax:
+const memoizedFn = useCallback(() => {
+// function logic
+}, [dependencies]);
 
-Currently, two official plugins are available:
+✅ 2. Why do we use useCallback?
+✔ To prevent unnecessary re-renders
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+When you pass functions as props to child components, they get new references on every re-render.
 
-## React Compiler
+This triggers unnecessary child re-renders.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+useCallback ensures the function reference stays the same unless needed.
 
-## Expanding the ESLint configuration
+✔ To maintain referential equality
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Useful with:
+
+React.memo
+
+useEffect dependency arrays
+
+event handlers passed to children
+
+✔ To avoid re-creating functions on every render
+
+React recreates functions each render → not always costly,
+but when used in expensive components → impacts performance.
+
+🚫 3. When NOT to use useCallback?
+
+Interviewers love this question.
+
+When child component is not memoized, useCallback gives no benefit.
+
+When function is simple or small.
+
+Overusing it can increase memory usage and reduce readability.
+
+Only use after profiling.
+
+🔥 4. Simple example — Parent passes handler to child
+❌ Problem without useCallback:
+
+A new function is created on every render → child re-renders.
+
+function Parent() {
+const [count, setCount] = useState(0);
+
+const handleClick = () => {
+setCount(count + 1);
+};
+
+return <Child onClick={handleClick} />;
+}
+
+Even if Child uses React.memo, it still re-renders because
+handleClick is different reference each time.
+
+✅ With useCallback (function reference preserved)
+const handleClick = useCallback(() => {
+setCount(c => c + 1);
+}, []);
+
+Now Child will not re-render unless necessary.
+
+📌 5. Real-world example — Passing stable functions
+const filteredData = useMemo(() => {
+return items.filter(filterFunction);
+}, [items, filterFunction]);
+
+Here filterFunction should be stable, so we write:
+
+const filterFunction = useCallback(item => item.active, []);
+
+Prevents useMemo from recalculating unnecessarily.
+
+🔥 6. useCallback vs useMemo (common interview question)
+Hook Memoizes
+useCallback A function reference
+useMemo A value (result of a function)
+
+Example:
+
+useCallback(() => doSomething(), []) // memoizes the function
+
+useMemo(() => computeSomething(), []) // memoizes the computed value
