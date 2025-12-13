@@ -1,0 +1,156 @@
+/* body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.app{
+  text-align: center;
+  border: 1px solid black;
+  width: 50vw
+  
+}
+
+h1{
+  margin: 0;
+  background-color: blue;
+  padding: 10px;
+}
+input{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 500px; 
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+button{
+  background-color: green;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.alert-pop{
+  background-color: whitesmoke;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+} */
+
+
+
+/* Reset & global styles */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container */
+.app {
+  background-color: #ffffff;
+  width: 400px;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.app h1 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.6);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Success message */
+.alert-pop {
+  position: absolute;
+  top: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  animation: slideDown 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app {
+    width: 90%;
+  }
+}
