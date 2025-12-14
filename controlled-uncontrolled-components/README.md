@@ -12,6 +12,7 @@ const handleInputChange = (e) =>{
 setName(e.target.value);
 }
 return (
+
 <div>
 <input type = "text" value = {name} onChange = {handleInputChange}/>
 </div>
@@ -19,3 +20,4 @@ return (
 }
 
 export default ControlledInput;
+uncontrolled components : It is handled by Dom itself
