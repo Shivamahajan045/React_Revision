@@ -43,7 +43,7 @@ const AddContact = ({ addContact }) => {
         <label>Email:</label>
         <input
           type="email"
-          placeholder="enter name"
+          placeholder="enter email"
           onChange={handleInputChange}
           value={contactData.email}
           name="email"
