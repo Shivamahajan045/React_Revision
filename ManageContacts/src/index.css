@@ -1,0 +1,201 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PAGE */
+body {
+  background-color: #f2f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 15px;
+}
+
+/* APP CONTAINER */
+.app {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+.app h1 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 25px;
+}
+
+/* ADD CONTACT */
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+form input:focus {
+  border-color: #2563eb;
+}
+
+/* ADD BUTTON */
+.add-contact {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.add-contact:hover {
+  background-color: #1e4fd6;
+}
+
+/* CONTACT LIST */
+.contact-list-title {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* CONTACT ITEM */
+.contact-item {
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* CONTACT INFO */
+.contact-info div:first-child {
+  font-weight: bold;
+}
+
+.contact-info div:last-child {
+  font-size: 13px;
+  color: #555;
+}
+
+/* DELETE ICON */
+.delete-btn {
+  cursor: pointer;
+  color: #ef4444;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  transform: scale(1.1);
+}
+
+/* EMPTY MESSAGE */
+.empty-text {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+
+/* CONTACT LIST WRAPPER */
+.contact-list-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+/* LIST CONTAINER */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* CONTACT CARD */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* CONTACT TEXT */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info .name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.contact-info .email {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fee2e2;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+  transform: scale(1.1);
+}
+
+/* EMPTY LIST TEXT */
+.empty-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+    
