@@ -6,11 +6,11 @@ function App() {
 
   const counterReducer = (state, action) => {
     if (action.type === "INCREMENT") {
-      return { count: state.count + 1 };
+      return { ...state, count: state.count + 1 };
     } else if (action.type === "DECREMENT") {
-      return { count: state.count - 1 };
+      return { ...state, count: state.count - 1 };
     } else if (action.type === "RESET") {
-      return { count: 0 };
+      return { ...state, count: 0 };
     } else {
       return state;
     }
@@ -37,6 +37,8 @@ function App() {
       <div>
         <button onClick={() => dispatch({ type: "RESET" })}>Reset count</button>
       </div>
+      <hr />
+      <h1>useReducer Hook Ex-2</h1>
     </div>
   );
 }
