@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 
 function App() {
   const localStorageKey = "contact";
+
   const [contact, setContact] = useState(() => {
-    return JSON.parse(localStorage.getItem(localStorageKey));
+    const storedContacts = localStorage.getItem(localStorageKey);
+    return storedContacts ? JSON.parse(storedContacts) : [];
   });
 
   useEffect(() => {
@@ -19,9 +21,9 @@ function App() {
   };
 
   const deleteContact = (id) => {
-    const updatedContactList = contact.filter((el) => el.id !== id);
-    setContact(updatedContactList);
+    setContact(contact.filter((el) => el.id !== id));
   };
+
   return (
     <div className="app">
       <Header />
