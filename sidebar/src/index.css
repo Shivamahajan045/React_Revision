@@ -1,0 +1,85 @@
+.sidebar-container{
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.781);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-container.closed{
+  width: 80px;
+}
+
+.sidebar-heading{
+  display: flex;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.toggle-btn{
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.toggle-btn .arrow{
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+
+.toggle-btn .left{
+  border-width: 8px 10px 8px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.toggle-btn .right{
+  border-width: 8px 0 8px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.logo{
+  text-align: center;
+}
+
+.logo h2{
+  font-family: sans-serif;
+  color: red;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.nav-menu ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-menu ul li{
+  padding: 15px 20px;
+}
+
+.nav-menu ul li a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ul li a:hover{
+  background-color: rgb(40, 40, 97) 
+}
+
+
+.sidebar-container.closed .nav-menu ul li,
+.sidebar-container.closed .logo h2 {
+  display: none;
+}
